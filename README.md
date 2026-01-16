@@ -15,10 +15,10 @@
     <img alt="OpenSourceNITJ" src="https://img.shields.io/badge/OpenSourceNITJ-community?color#2596be">
   </a>
   <a href="https://github.com/opensourcenitj/api">
-    <img alt="GitHub version" src="https://img.shields.io/github/package-json/v/opensourcenitj/api?color=ffffff">
+    <img alt="GitHub version" src="https://img.shields.io/github/package-json/v/Opensource-NITJ/api?color=ffffff">
   </a>
   <a href="https://github.com/opensourcenitj/api">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/opensourcenitj/api?color=ffffff">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Opensource-NITJ/api?color=ffffff">
   </a>
 </p>
 
