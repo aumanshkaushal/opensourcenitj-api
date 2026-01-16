@@ -10,7 +10,11 @@ export async function getFirstYearGroups(): Promise<{ [key: string]: semArrDataT
     const sessions = await fetch(config.url.sessionAndDept);
     const sessionDeptData = (await sessions.json()) as sessionDeptDataType;
 
-    const currentSession = sessionDeptData.uniqueSessions.find(sess => sess.currentSession)?.session;
+    const currentSessionObj = sessionDeptData.uniqueSessions.find(sess => sess.currentSession);
+    if (!currentSessionObj || !currentSessionObj.session) {
+        throw new Error("Current session not found in sessionDeptData.uniqueSessions");
+    }
+    const currentSession = currentSessionObj.session;
 
     const dept = sessionDeptData.uniqueDept[0];
 
