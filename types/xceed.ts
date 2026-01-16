@@ -1,27 +1,27 @@
 export type semArrDataType = Array<{
-    _id: String;
-    sem: String;
-    code: String;
-    created_at: String;
-    updated_at: String;
-    __v: Number;
+    _id: string;
+    sem: string;
+    code: string;
+    created_at: string;
+    updated_at: string;
+    __v: number;
 }>;
 
 export type semDataType = {
-    _id: String;
-    sem: String;
-    code: String;
-    created_at: String;
-    updated_at: String;
-    __v: Number;
+    _id: string;
+    sem: string;
+    code: string;
+    created_at: string;
+    updated_at: string;
+    __v: number;
 };
 
 export type sessionDeptDataType = {
     uniqueSessions: Array<{
-        session: String;
-        currentSession: Boolean;
+        session: string;
+        currentSession: boolean;
     }>;
-    uniqueDept: String[];
+    uniqueDept: string[];
 };
 
 export type timetableDataType = {
