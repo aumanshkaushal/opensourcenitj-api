@@ -1,7 +1,7 @@
 {
     "name": "api",
     "description": "Build NITJ-Integrated apps without friction with OpensourceNITJ API",
-    "module": "index.ts",
+    "module": "server.ts",
     "type": "module",
     "version": "0.1.0",
     "private": true,
