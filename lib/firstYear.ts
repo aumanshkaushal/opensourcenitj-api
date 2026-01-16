@@ -51,7 +51,7 @@ export async function getStudentDetails(rollNumber: string, batch: string): Prom
         return null;
     }
 
-    const record = data.find(obj => obj.name);
+    const record = data[0];
 
     const student: studentInfo = {
         rollnumber: record?.rollnumber.toString() || "",
