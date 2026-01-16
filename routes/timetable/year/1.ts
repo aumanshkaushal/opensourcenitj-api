@@ -72,14 +72,22 @@ year1.openapi(
             return c.json({ error: "Invalid group parameter" }, 400);
         }
 
-        const fetchedData = await fetch(
-            `${config.url.timeTable}/${encodeURIComponent(groupData.code.toString())}/${encodeURIComponent(
-                groupData.sem.toString()
-            )}`
-        );
+        try {
+            const fetchedData = await fetch(
+                `${config.url.timeTable}/${encodeURIComponent(groupData.code.toString())}/${encodeURIComponent(
+                    groupData.sem.toString()
+                )}`
+            );
 
-        const data = (await fetchedData.json()) as timetableDataType;
+            if (!fetchedData.ok) {
+                return c.json({ error: "Failed to fetch timetable data" }, 502);
+            }
 
-        return c.json(data, 200);
+            const data = (await fetchedData.json()) as timetableDataType;
+
+            return c.json(data, 200);
+        } catch (error) {
+            return c.json({ error: "An error occurred while fetching timetable data" }, 500);
+        }
     }
 );
