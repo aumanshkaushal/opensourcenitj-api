@@ -64,7 +64,7 @@ export async function getStudentDetails(rollNumber: string, batch: string): Prom
     return student;
 }
 
-export async function getGroup(rollNumber: string): Promise<{ group: string; subGroup: string } | null> {
+export async function getGroup(rollNumber: string): Promise<{ group: string; subGroup: string | null } | null> {
     const groups = ["A1", "A2", "A3", "A4", "A5", "A6", "B1", "B2", "B3", "B4", "B5", "B6"];
     const subGroups = ["a", "b", "c"];
 
@@ -73,10 +73,11 @@ export async function getGroup(rollNumber: string): Promise<{ group: string; sub
         const studentGroup = studentDetails.group.toUpperCase();
         const subGroup = studentDetails.subgroup.toLowerCase().slice(-1);
         if (groups.includes(studentGroup)) {
-            return {
-                group: studentGroup,
-                subGroup: subGroup,
-            };
+            if (subGroups.includes(subGroup)) {
+                return { group: studentGroup, subGroup: subGroup };
+            } else {
+                return { group: studentGroup, subGroup: subGroup[0] as string };
+            }
         }
     }
 
